@@ -14,7 +14,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _controller = PageController();
   int _currentPage = 0;
 
-  /// TODO : Task - Create Model For This List
+  ///  : Task - Create Model For This List
   final List<OnboardingModel> onboardingData = [
     OnboardingModel(
       image: 'assets/images/onboarding1.png',
