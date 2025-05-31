@@ -19,12 +19,16 @@ class NewsArticle {
   @HiveField(4)
   final String url;
 
+  @HiveField(5)
+  final String? description;
+
   NewsArticle({
     required this.title,
     required this.urlToImage,
     required this.sourceName,
     required this.publishedAt,
     required this.url,
+    this.description,
   });
 
   factory NewsArticle.fromJson(Map<String, dynamic> json) {
@@ -32,8 +36,10 @@ class NewsArticle {
       title: json['title'] ?? '',
       urlToImage: json['urlToImage'],
       sourceName: json['source']['name'] ?? 'Unknown',
-      publishedAt: DateTime.tryParse(json['publishedAt'] ?? '') ?? DateTime.now(),
+      publishedAt:
+          DateTime.tryParse(json['publishedAt'] ?? '') ?? DateTime.now(),
       url: json['url'] ?? '',
+      description: json['description'],
     );
   }
 }

@@ -18,17 +18,18 @@ class NewsArticleAdapter extends TypeAdapter<NewsArticle> {
     };
     return NewsArticle(
       title: fields[0] as String,
-      urlToImage: fields[1] as String,
+      urlToImage: fields[1] as String?,
       sourceName: fields[2] as String,
       publishedAt: fields[3] as DateTime,
       url: fields[4] as String,
+      description: fields[5] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, NewsArticle obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.title)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class NewsArticleAdapter extends TypeAdapter<NewsArticle> {
       ..writeByte(3)
       ..write(obj.publishedAt)
       ..writeByte(4)
-      ..write(obj.url);
+      ..write(obj.url)
+      ..writeByte(5)
+      ..write(obj.description);
   }
 
   @override

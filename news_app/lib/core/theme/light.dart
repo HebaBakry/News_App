@@ -58,6 +58,11 @@ class AppTheme {
           color: Color(0xFF484A5A),
         ),
         labelLarge: TextStyle(fontSize: 18, color: Color(0xFF8A8CA2)),
+        labelMedium: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+          color: Color(0xFF363636),
+        ),
       ),
       appBarTheme: const AppBarTheme(
         backgroundColor: backgroundColor,
